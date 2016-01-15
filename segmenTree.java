@@ -25,7 +25,7 @@ public class segmentTree{
 	    }
 	  }
 
-	  // search the minimum value in range [a ,b]
+	  // search the minimum value in range [a ,b] in region [l,r]
 	  // k : 节点编号
 	  public int getMini(int a, int b, int k, int l, int r){
 	    // 如果两个范围不相交， 输出MAX_VALUE
