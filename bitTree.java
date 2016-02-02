@@ -15,6 +15,7 @@ class bitTree {
     }
 
     // get the summation from i to the end
+    // bit tree index starts from 0001 -> 1, thus i++
     public void init(int i, int val){
         i++;
         while (i<=n){
