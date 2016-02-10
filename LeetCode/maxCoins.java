@@ -1,20 +1,36 @@
 /*
 https://leetcode.com/problems/burst-balloons/
 
-nature way to divide the problem is burst one balloon and separate the balloons into 
-2 sub sections one on the left and one one the right. However, in this problem the 
+nature way to divide the problem is burst one balloon and separate the balloons into
+2 sub sections one on the left and one one the right. However, in this problem the
 left and right become adjacent and have effects on the maxCoins in the future.
 
-However, the coins you get for a balloon does not depend on the balloons already burst. 
-Therefore instead of divide the problem by the first balloon to burst, we divide the 
+we can find that for any balloons left the maxCoins does not depends on the balloons
+already bursted. This indicate that we can use memorization (top down) or dynamic programming
+(bottom up) for all the cases from small numbers of balloon until n balloons
+
+Therefore instead of divide the problem by the first balloon to burst, we divide the
 problem by the last balloon to burst.
 
-The characteristic of "last burst" is the distance from left to right is the samllest 
-it can be, which is 2. Thus, the length of window is build up from shorter ranges to 
+Why is that? Because only the first and last balloons we are sure of their adjacent balloons
+before hand!
+
+For the first we have nums[i-1]*nums[i]*nums[i+1] for the last we have nums[-1]*nums[i]*nums[n].
+
+We can see that the balloons is again separated into 2 sections. But this time since the balloon
+i is the last balloon of all to burst, the left and right section now has well defined boundary
+and do not affect each other! Therefore we can do either recursive method with memoization or dp.
+
+The characteristic of "last burst" is the distance from left to right is the samllest
+it can be, which is 2. Thus, the length of window is build up from shorter ranges to
 longer ranges.
 
-And apprantly, the "neighbor" of i is always "left" and "right", because from left to i, 
-from i to right, all the items have alredy been bursted (except left, i, right)
+This dp works in this way: we scan the array from len 2 to len n with ALL POSSIBLE start points and
+end points. For EACH combination, we will find the best way "i" to burst balloons.
+
+The "neighbor" of i is always "left" and "right", because assuming, from left to i, from i to right,
+all the items have alredy been bursted (except left, i, right).
+So only balloons left, i and right exits in current combination,
 
 This problem could be solved using DP (bottom up), or divide and conquer with memorization
 (top down).
