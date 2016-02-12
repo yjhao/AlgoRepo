@@ -14,6 +14,8 @@ public class Solution {
                                                   9_10_11_5
                   when 2nd time it encounters 5, because first time we processed
                   5678, so don't need to process 5678 again, just use the memorized data.
+
+                  Time complexity O(mn)
     */
 
     public int longestIncreasingPath2(int[][] matrix) {
