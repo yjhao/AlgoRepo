@@ -9,6 +9,7 @@ public class Solution {
 
     /* solution 2: DFS + memorization
     memorization: the recursive function MUST has return type.
+                  (line 36 and 48 explain why better use a return type -> directely return the memo value)
 
                   the work flow of memo is like : 1_2_3_4_5_6_7_8
                                                   9_10_11_5
