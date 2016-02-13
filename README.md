@@ -1,4 +1,4 @@
-# Coding
+# AlgoRepo
 
 I love coding, especially _solving problems_.
 
