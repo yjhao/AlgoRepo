@@ -1,5 +1,7 @@
-# Coding
+# AlgoRepo
 
-Here, all sorts of coding problems are solved.
+I love coding, especially _solving problems_.
 
-Feel free to leave any comments.
+Here, I will provide the solution and thoughts of all sorts of coding and algorithm/data structure problems.
+
+Feel free to leave comments.
