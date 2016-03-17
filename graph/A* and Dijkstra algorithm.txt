@@ -1,0 +1,43 @@
+都是用来graph search Minimum distance.
+
+Dijkstra
+
+对于Dijkstra, 类似于BFS, 最大的不同： 每一个节点找自己的neighbor的时候， 一般的BFS不会访问visited，
+但是对于Dijkstra, 不会访问的节点， 是已经被完全evaluate的一些节点， 也就是说， 这些节点自己的所有邻居都已经访问过。
+
+比如说首先从1开始， 访问3，4，2。然后把1加入Set, 然后访问3， 这个时候， 访问2，5，比较1-2和3-2的距离并更新，(relaxation)
+但是这个时候不会再访问1了 因为1已经被完全evaluate过了。 然后把3加入set中。 以此类推。
+
+关键的问题是， 比如说在第二步的时候， 有2,3和4可以访问， 但是先访问哪个呢？ 这个时候， 我们访问的节点， 它到起点的距离在所以候选人中是最小的。
+O(|E|+|V|log|V|)
+
+  - 4
+ -
+1-------2
+ -     -
+  -   -
+   - 3 ------5
+
+
+A*  算法
+
+A* 也是搜索最短路的， 不过比Dijkstra更有效。 A* achieves better performance by using heuristics to guide its search.
+A* 最大的不同： 在每一步选择到底该访问哪个节点的时候， 用的是一个评价方程：
+f(n) = g(n) + h(n)
+
+g(n) 是 现在的n节点到起点的实际距离。 h(n)是n到目的地的“预测距离”， 预测距离是理论上的最短距离， 比如说直线距离。
+
+然后每一次traverse的时候， 用一个PQ选出现在所有遇到过的节点， 还没有被evaluate的, f(n)值最小的点进行visit.
+
+visit 一个节点的时候， 对于他的neighbor节点n， 算出g(n) (请注意， 这是实际距离， 为当前节点距离加上当前节点到n的距离)，
+并不断更新最小g(n)。
+
+然后算出f(n)并更新。
+
+相似于Dijkstra,遍历邻居的时候， 如果这个邻居已经被完全evaluate过了， 就不会再次遍历。
+
+例子： http://myst729.github.io/2014/a-star-pathfinding/
+
+------
+讲解两个方法的不同： http://blog.csdn.net/v_JULY_v/article/details/6238029
+主要是在于搜索的范围： 如果是Dijkstra, 从起点开始会是一个圆型慢慢扩大。 而对于A*， 会是一个直线朝终点发展。
