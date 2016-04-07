@@ -13,64 +13,47 @@
 这个方法速度很慢， 因为它穷尽所有可能的组合， 而不论是否是最短解。比如说首先先减一再加一，虽然看似好像归零了，但是用了两次操作， 不是最优解。
 
 解决办法是使用DFS, 如下文描述
+https://leetcode.com/discuss/72208/easiest-9ms-java-solution
 
 ##代码
 ```
-public class Solution {
-    public List<String> removeInvalidParentheses(String s) {
-        List<String> res = new ArrayList<String>();
-        LinkedList<String> queue = new LinkedList<>();
-        HashSet<String> visited = new HashSet<String>();
-        queue.offer(s);
-        int minCut = s.length()+1;
-        boolean find = false;
-        
-        while (!queue.isEmpty()){
-            String cur = queue.poll();
-            int curCut = s.length() - cur.length();
-            if (curCut>minCut)  continue;
-            
-            if (valid(cur)){
-                find = true;
-                res.add(cur);
-                minCut = curCut;
-            }
-            
-            if (find==true){
-                continue;
-            }
-            
-            for (int i=0; i<cur.length(); i++){
-                if (cur.charAt(i)!='(' && cur.charAt(i)!=')')   continue;
-                String next = cur.substring(0,i) + cur.substring(i+1,cur.length());
-                if (!visited.contains(next)){
-                    visited.add(next);
-                    queue.offer(next);
-                }
-            }
+public List<String> removeInvalidParentheses(String s) {
+    Set<String> res = new HashSet<>();
+    int rmL = 0, rmR = 0;
+    for(int i = 0; i < s.length(); i++) {
+        if(s.charAt(i) == '(') rmL++;
+        if(s.charAt(i) == ')') {
+            if(rmL != 0) rmL--;
+            else rmR++;
         }
-        
-        return res;
     }
-    
-    public boolean valid(String s){
-        int count = 0;
-        for (int i=0; i<s.length(); i++){
-            char cur = s.charAt(i);
-            if (cur!='(' && cur!=')')   continue;
-            if (cur=='('){
-                count++;
-            }else{
-                count--;
-                if (count<0){
-                    return false;
-                }
-            }
-        }
-        
-        return count==0;
-    }
+    DFS(res, s, 0, rmL, rmR, 0, new StringBuilder());
+    return new ArrayList<String>(res);  
 }
+
+public void DFS(Set<String> res, String s, int i, int rmL, int rmR, int open, StringBuilder sb) {
+    if(i == s.length() && rmL == 0 && rmR == 0 && open == 0) {
+        res.add(sb.toString());
+        return;
+    }
+    if(i == s.length() || rmL < 0 || rmR < 0 || open < 0) return;
+
+    char c = s.charAt(i);
+    int len = sb.length();
+
+    if(c == '(') {
+        DFS(res, s, i + 1, rmL - 1, rmR, open, sb);
+        DFS(res, s, i + 1, rmL, rmR, open + 1, sb.append(c)); 
+
+    } else if(c == ')') {
+        DFS(res, s, i + 1, rmL, rmR - 1, open, sb);
+        DFS(res, s, i + 1, rmL, rmR, open - 1, sb.append(c));
+
+    } else {
+        DFS(res, s, i + 1, rmL, rmR, open, sb.append(c)); 
+    }
+
+   
 ```
 
 ## DFS
