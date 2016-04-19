@@ -83,6 +83,8 @@ for(int i = 0; i < s.length(); i++) {
     }
 ```
 
+**特别需要注意的是， 因为是DFS, 所以最后的结果有可能会有重复！需要用Set来保存结果！**
+
 ## 代码
 ```
 public List<String> removeInvalidParentheses(String s) {
