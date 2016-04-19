@@ -15,9 +15,9 @@ unhold[i][j]: 最多 i 次交易， 在第 j 天的最大的利润， 此时手�
 **如果有手续费的话， 直接加入转移方程中。**
 
 ```
-hold[i][j]   = Math.max(unhold[i-1][j] - price[j], hold[i][j-1])
+hold[i][j]   = Math.max(unhold[i-1][j-1] - price[j], hold[i][j-1])
 
-unhold[i][j] = Math.max(    hold[i][j] + price[j], unhold[i][j-1])
+unhold[i][j] = Math.max(    hold[i][j-1] + price[j], unhold[i][j-1])
 ```
 
 特别注意， 要初始化 hold[1：k][0] = -price[0]。 在第0天， 对于任何买的情况下， 收益都为 -price[0]。
@@ -42,8 +42,8 @@ public class Solution {
             hold[i][0] = -prices[0];    // init for line 17
             unhold[i][0] = 0;
             for(int j = 1; j < prices.length; j++) {
-                hold[i][j] = Math.max(-prices[j] + unhold[i-1][j], hold[i][j-1]); // Buy or not buy
-                unhold[i][j] = Math.max(prices[j] + hold[i][j], unhold[i][j-1]); // Sell or not sell
+                hold[i][j] = Math.max(-prices[j] + unhold[i-1][j-1], hold[i][j-1]); // Buy or not buy
+                unhold[i][j] = Math.max(prices[j] + hold[i][j-1], unhold[i][j-1]); // Sell or not sell
             }
         }
         return unhold[k][prices.length-1];
