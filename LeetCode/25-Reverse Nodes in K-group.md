@@ -15,6 +15,57 @@ pre-1-2-3-(4) : pre-2-1-3-(4) : pre-3-2-1-(4)
 1. while（true）loop 直到break。 
 2. 在第二个while loop中， 一定要将break的语句放到while之外， 不然只是break内层的while。
 
+##我写的代码 注意break的时候， count和Cur可能同时为K和null， 所以都要检查
+
+```
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) { val = x; }
+ * }
+ */
+public class Solution {
+    public ListNode reverseKGroup(ListNode head, int k) {
+        if (head==null || head.next == null || k==0)    return head;
+        ListNode fakehead = new ListNode(0);
+        fakehead.next = head;
+        ListNode cur = fakehead;
+        
+        while (cur!=null){
+            ListNode curTail = cur.next;
+            ListNode curPre  = cur;
+            int count = 0;
+            while (count<k && cur!=null){
+                count++;
+                cur = cur.next;
+            }
+            
+            if (count!=k || cur==null) break;
+            
+            ListNode nextHead = cur.next;
+            reverse(curPre, nextHead);
+            cur = curTail;
+        }
+        
+        return fakehead.next;
+    }
+    
+    public void reverse(ListNode pre, ListNode nextHead){
+        ListNode cur = pre.next;
+        ListNode tail = cur;
+        while (cur != nextHead){
+            ListNode next = cur.next;
+            cur.next = pre.next;
+            pre.next = cur;
+            cur = next;
+        }
+        tail.next = nextHead;
+    }
+}
+```
+
 ##代码
 ```
 /**
