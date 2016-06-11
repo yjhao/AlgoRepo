@@ -7,6 +7,17 @@
    when plus j, it means from 0 to j-1, all the numbers in the right are smaller
    than current left[i], why are we sure about it? Because they are all added to the
    merged array before left[i], which means they are smaller.
+
+
+   *****  when compare left and right, USE <= but not <. 
+
+   在右端， 比left[i] 先放入 sorted array的， 一定是比 left[i] 要小的， 所以使用 <=, 而不是 <。
+
+   THIS will make sure the numbers on the 
+   right that are equal to left[i] will be added after left[i] is added.
+
+   OR there will be problems--> j includes the numbers whos value is equal to nums[i] when calculating the
+   inversion number. Actually, they should not be counted.
  * the time complexity is O(nlogn)
  */
 

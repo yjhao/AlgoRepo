@@ -9,6 +9,10 @@ DFS 比 BFS 快得多
 
 此处DFS 夹带了**剪枝**， 当DFS的过程中， 如果碰到了一个之前已经访问过的node， 直接返回这个Node， 因为在这个node的所有添加邻居的操作， **都已经在， 或会在，**  访问这个node的时候进行。
 
+map.add 这个操作一定要在 下一层的 dfs 之前进行。 不然当下一层的dfs 绕回来的时候，如果发现 当前 map 中没有当前node， 就又会再次重复的 dfs， 最终造成 stackoverflow。 比如说 a - b - a
+
+**这个 map 起到了一个 visited 的作用， 告诉下面层次的 DFS， 哪些是已经 visited 过了的， 可以直接使用了。** 
+
 ```
 public class Solution {
     public UndirectedGraphNode cloneGraph(UndirectedGraphNode node) {
