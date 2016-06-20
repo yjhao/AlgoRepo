@@ -17,9 +17,16 @@ By calling next repeatedly until hasNext returns false, the order of elements re
 
 所以应该用 stack。
 
-在探测有没有 hasNext（） 的时候， 只有在Stack 面上的东西 是个 integer 才返回真。 所以在解包一个 Sublist， 并且放上 stack  之后， 还得继续 检测， 看面上的那一个是否为 integer。
+反向加入每一个item。
 
-**考虑到这点，应该用 while loop 来检测 ， while (!stack.isEmpty())**
+关键是 如何 实现 hasNext（）.
+
+基本逻辑是： 如果 stack 的下一个出来的是 integer， 那么就是 true。 如果出来的还是 list， 那么就把这个 list 解包， 然后再放入stack。
+
+如果 stack 都变成空了， 还没有找到这样的 Integer， 那么就返回 false。
+
+###细节
+如果只有最后一个 Item 了， pop() 这个 item 之后， 这个stack就是空了， 所以这个时候不能使用 while (!stack.isEmpty())。 因为还没有解包这个item之前， 这个 stack 就已经是空的了。
 
 ##代码
 ```
@@ -42,28 +49,29 @@ By calling next repeatedly until hasNext returns false, the order of elements re
  */
 public class NestedIterator implements Iterator<Integer> {
     LinkedList<NestedInteger> stack = new LinkedList<NestedInteger>();
+    NestedInteger res = null;
     
     public NestedIterator(List<NestedInteger> nestedList) {
         for (int i=nestedList.size()-1; i>=0; i--){
-            stack.push(nestedList.get(i));
+            NestedInteger cur = nestedList.get(i);
+            if (cur!=null)  stack.push(cur);
         }    
     }
 
     @Override
     public Integer next() {
-        return stack.pop().getInteger();
+        return res.getInteger();
     }
 
     @Override
     public boolean hasNext() {
         if (stack.isEmpty())    return false;
-        
         while (!stack.isEmpty()){
-            if (stack.peek().isInteger())     return true;
-            NestedInteger top = stack.pop();
-            List<NestedInteger> list = top.getList();
-            for (int i=list.size()-1; i>=0; i--){
-                stack.push(list.get(i));
+            res = stack.pop();
+            if (res.isInteger())    return true;
+            List<NestedInteger> curList = res.getList();
+            for (int i=curList.size()-1; i>=0; i--){
+                if (curList.get(i)!=null)   stack.push(curList.get(i));
             }
         }
         
