@@ -36,6 +36,8 @@ public class Circle implements Shape {
 
 因为这个 shape 本身应该被其所有的子孙都可以使用， 所以在这里将它设置为 protected。然后传入一个 基本 的shape。
 
+注意， 在这里， draw 中执行的是  当前Decorateshape 的 draw 的方法， 所以这里就实现了多态， 子孙在draw中， 在做出添加之前， 只需要 call super.draw(shape)， 就一定会先实现之前的基础形状应该有的 draw。
+
 ```
 public abstract class ShapeDecorator implements Shape {
    protected Shape decoratedShape;
@@ -51,6 +53,8 @@ public abstract class ShapeDecorator implements Shape {
 ```
 
 如果我们现在想将这个 shape 染成红色的， 只需要建立一个 extends a decorator 在原基础上染色。 因为实在原基础上， 所以我们要使用 super constucter， 这也是为什么我们要将原来的 shape 设置为 private。
+
+**在这里 原来的 Decorateshape 经过了 Constucter， 返回的是当前的新 redShapeDecorator。所以在 Call draw 的时候， 就实现了多态**
 
 在方法中， 也要引用原方法的相同方法， 因为是在原方法的基础上的。
 
@@ -95,4 +99,109 @@ public class DecoratorPatternDemo {
       redRectangle.draw();
    }
 }
+```
+
+##例子二， 层层添加
+在这里， 先实现了一个 基本的 car
+
+```
+public interface Car {
+
+	public void assemble();
+}
+
+public class BasicCar implements Car {
+
+	@Override
+	public void assemble() {
+		System.out.print("Basic Car.");
+	}
+
+}
+```
+
+ 然后是一个 carDecorator， 注意 assemble中， call 的是 this.car.assemble， 实现了多态
+ 
+ 
+```
+ public class CarDecorator implements Car {
+
+	protected Car car;
+	
+	public CarDecorator(Car c){
+		this.car=c;
+	}
+	
+	@Override
+	public void assemble() {
+		this.car.assemble();
+	}
+
+}
+```
+
+然后是一些 添加的属性， 在基础的 Decorator上添加， 所以用 extends， 而且 assemble中， 都是先call了 super.assemble， 回到了 basic 的 decorator， 在basic的decorator中， 根据多态性来执行应该有的行为。
+
+这样做的话， 可以实现 嵌套， 比如说
+
+```
+Car sportsLuxuryCar = new SportsCar(new LuxuryCar(new BasicCar()));
+sportsLuxuryCar.assemble();
+```
+
+sports car CALL super --> luxury call CALL super --> basic car
+
+
+就先实现了basic car assemble， 然后是 luxury car assemble， 最后才是 sportscar assmeble。 有点像recursion。
+
+```
+public class SportsCar extends CarDecorator {
+
+	public SportsCar(Car c) {
+		super(c);
+	}
+
+	@Override
+	public void assemble(){
+		super.assemble();
+		System.out.print(" Adding features of Sports Car.");
+	}
+}
+
+public class LuxuryCar extends CarDecorator {
+
+	public LuxuryCar(Car c) {
+		super(c);
+	}
+	
+	@Override
+	public void assemble(){
+		super.assemble();
+		System.out.print(" Adding features of Luxury Car.");
+	}
+}
+```
+主函数
+
+```
+public class DecoratorPatternTest {
+
+	public static void main(String[] args) {
+		Car sportsCar = new SportsCar(new BasicCar());
+		sportsCar.assemble();
+		System.out.println("\n*****");
+		
+		Car sportsLuxuryCar = new SportsCar(new LuxuryCar(new BasicCar()));
+		sportsLuxuryCar.assemble();
+	}
+
+}
+```
+
+最后的输出
+
+```
+Basic Car. Adding features of Sports Car.
+*****
+Basic Car. Adding features of Luxury Car. Adding features of Sports Car.
 ```
