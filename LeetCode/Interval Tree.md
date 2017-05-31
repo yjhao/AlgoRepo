@@ -1,9 +1,9 @@
-#Interval Tree
+# Interval Tree
 
 类似 bst， 按照 interval.start 来排序， 每一个node还要存 当前node 的子孙中， 最大的 interval.end
 
 
-##对一个新的 interval x, 判断是否有overlap， 如果有overlap的话， 返回其中一个overlap的interval。
+## 对一个新的 interval x, 判断是否有overlap， 如果有overlap的话， 返回其中一个overlap的interval。
 分三个情况：
 
 Interval overlappingIntervalSearch(root, x)
@@ -54,3 +54,4 @@ This could be done in Log(n) time complexity.
 At each step, we only go either left or right, thus the time complexity is O(logn).
 
 http://www.bowdoin.edu/~ltoma/teaching/cs231/fall07/Lectures/augtrees.pdf 
+

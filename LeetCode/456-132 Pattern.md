@@ -1,12 +1,12 @@
-#456-132 Pattern
+# 456-132 Pattern
 ## 题意
 给定整数序列a1, a2, ..., an，132模式是指一组序列 ai, aj, ak 满足  i < j < k and ai < ak < aj。设计算法判断长度为n的整数列表中是否包含132模式。
 
-##解题
+## 解题
 ## O(n2) 方法
 如果我们确定了最右边的数字 j， 那么只需要在其左面找到两个数， i , k， ai < ak, aj > ak, i<j。 所以从左边开始搜索I, 从J的右边开始搜索k， 如果找到满足这个要求的i, k pair， 那么就返回 true
 
-###代码
+### 代码
 ```
 public boolean find132pattern(int[] nums) {
         if (nums.length<3)  return false;
@@ -26,14 +26,14 @@ public boolean find132pattern(int[] nums) {
     }
 ```
 
-##O(nlogn)方法， 二分查找树， treemap
+## O(nlogn)方法， 二分查找树， treemap
 在这里， 当遍历到I的时候， 我们随时更新i之前的最小的数是多少， 那么假设ai是三个数中最大的数， 那么右边有没有一个数 大于最小的数， 并小于ai。
 
 普通的搜索是O(n)， 但是我们使用了二分查找树， treemap之后， 这个搜索可以简化为 logn。
 
 注意， 因为是要严格的大于最小数， 所以不能使用ceilingKey （大于等于）， 而要使用 higherKey().
 
-###代码
+### 代码
 ```
 public boolean find132pattern(int[] nums) {
         if (nums.length<3)  return false;
@@ -57,7 +57,7 @@ public boolean find132pattern(int[] nums) {
     }
 ```
 
-##O(n) 方法， 使用stack。
+## O(n) 方法， 使用stack。
 之前的方法， 我们都没有办法保存之前的信息。
 
 我最开始想到保存两个min, max， 然后随时更新， 但是很快就发现， 这样的方法不能保存min , max 的相对位置， 如果出现了max， 我们可以更新max， 但是出现了min， 不能反映min是在max之后的信息。
@@ -80,14 +80,14 @@ public boolean find132pattern(int[] nums) {
 4. 那么如果之后出现一个数字比100大， 那么 s3Max 就修改为100；（100比80 更有利）。 如果小于80， 那么满足132； 如果在 80 和 100 之间， 将其加入Stack。 然后情况类似于之前的加入100， 因为如果要更新s2Max的话， 新的s2Max 总是比 之前的s2Max （80） 更大。
 
 
-###细节
+### 细节
 为什么不从数组的左端开始遍历， 而要从右端开始呢？
 
 如果从左端开始， 如果i （s2) 大于stack中的数字，那么就pop并记录， 在i左面的最小的数是多少。 但是这样的信息， 并不适合stack， **这样的stack， 适合找到比I小的之中， 最大的数是多少**
 
 另外一个原因是，s1<s3<s2， 似乎找到 s3, s2之后， 更容易利用线性找到 s1？ 如果找到 s1, s3，那么 s2没有这么方便确定？
 
-###代码
+### 代码
 ```
 public boolean find132pattern(int[] nums) {
         if (nums.length<3)  return false;
@@ -107,3 +107,5 @@ public boolean find132pattern(int[] nums) {
     }
 ```
    
+
+

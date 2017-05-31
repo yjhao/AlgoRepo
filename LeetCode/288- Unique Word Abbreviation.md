@@ -1,4 +1,4 @@
-#288- Unique Word Abbreviation
+# 288- Unique Word Abbreviation
 ## 题意
 给一个字典里的每一个单词 添加一个缩写。
 
@@ -6,7 +6,7 @@
 
 A word's abbreviation is unique if **no other** word from the dictionary has the same abbreviation.
 
-##解答
+## 解答
 最简答的方法， 当然是 用一个set来保存 相同 缩写的单词， 然后检查 需要检查的单词 是否在这个 set 中。
 
 但是还有更节约空间的方法.
@@ -25,7 +25,7 @@ A word's abbreviation is unique if **no other** word from the dictionary has the
 
 要判断是否是重复， 就很简单了， 只需要判断 map 有没有这个缩写，和这个缩写相对应的 单词 是什么。
 
-##代码
+## 代码
 ```
 public class ValidWordAbbr {
     HashMap<String, String> map = new HashMap<String, String>();
@@ -61,3 +61,4 @@ public class ValidWordAbbr {
 // vwa.isUnique("Word");
 // vwa.isUnique("anotherWord");
 ```
+

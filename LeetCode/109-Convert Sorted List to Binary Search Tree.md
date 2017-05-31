@@ -1,4 +1,4 @@
-#109-Convert Sorted List to Binary Search Tree
+# 109-Convert Sorted List to Binary Search Tree
 
 ## 题意
 把一个linked list 转换为平衡BST
@@ -16,7 +16,7 @@
 
 复杂度为 O(nlogn), 类似于merge sort
 
-#代码
+# 代码
 ```
 /**
  * Definition for singly-linked list.
@@ -76,7 +76,7 @@ public class Solution {
 
 **截半， 如果l>r了， 说明我们已经超出最大的可以每次“除以2”的次数了， 也就是深度！**
 
-##代码
+## 代码
 ```
 public class Solution {
     public TreeNode sortedListToBST(ListNode head) {

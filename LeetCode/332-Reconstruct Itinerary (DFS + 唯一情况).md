@@ -1,4 +1,4 @@
-#332-Reconstruct Itinerary (DFS + 唯一情况)
+# 332-Reconstruct Itinerary (DFS + 唯一情况)
 
 ## 题意
 根据飞机票的出发地和目的地， 重建行程单， 并要求输出字典序最小的那一个。
@@ -28,7 +28,7 @@ curList.add(i, nextCity);
 ```
 
 
-##代码
+## 代码
 ```
 public class Solution {
     public List<String> findItinerary(String[][] tickets) {
@@ -97,3 +97,4 @@ public class Solution {
     }
 }
 ```
+

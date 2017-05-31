@@ -1,6 +1,6 @@
-#259 Walls and Gates (BFS with multipel starts)
+# 259 Walls and Gates (BFS with multipel starts)
 
-# 题意
+## 题意
 You are given a m x n 2D grid initialized with these three possible values.
 
 -1 - A wall or an obstacle.
@@ -71,3 +71,5 @@ public:
     }
 };
 ```
+
+

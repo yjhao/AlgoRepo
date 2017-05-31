@@ -1,9 +1,9 @@
-##272-Closest Binary Search Tree Value II （Inorder 截枝）（tree 前驱节点， 后驱节点）
+## 272-Closest Binary Search Tree Value II （Inorder 截枝）（tree 前驱节点， 后驱节点）
 
 ## 题意
 在一个二分查找树中， 相对一个target, 找出最相近的 k 个数
 
-##解题， 方法一， O(n)
+## 解题， 方法一， O(n)
 第一种方法为 inorder traversal。
 
 因为找到的值是从小到大排列的， 所以我们可以利用这一点。 
@@ -21,7 +21,7 @@
 
 复杂度 O(n)
 
-##代码
+## 代码
 ```
 /**
  * Definition for a binary tree node.
@@ -62,7 +62,7 @@ public class Solution {
 }
 ```
 
-##方法二， O(klogn)
+## 方法二， O(klogn)
 模拟寻找这个target的过程， 从root开始一直往下，直到遇到 null， 会形成一个path。 使用两个stack 分别存储两个东西。 
 
 如果一个node的值比 目标大， 放入**后驱**这个stack中； 反之， 放入**前驱**这个stack中。
@@ -83,7 +83,7 @@ public class Solution {
 
 复杂度 O(klogn) , 取决于 k 的大小 和 n 的关系。
 
-##代码
+## 代码
 https://leetcode.com/discuss/71820/java-5ms-iterative-following-hint-o-klogn-time-and-space
 
 ```

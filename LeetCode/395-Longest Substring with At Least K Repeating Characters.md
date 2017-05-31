@@ -1,9 +1,9 @@
-#395-Longest Substring with At Least K Repeating Characters
+# 395-Longest Substring with At Least K Repeating Characters
 
-##题意
+## 题意
 知道一个最长的 substring， 其中的所有字符的个数都至少为K。
 
-##解题
+## 解题
 首先我们对string s中的每一个字符来判断， 个数是否至少为k， 如果是的话， 直接返回s.length。
 
 如果不是的话， 那么答案中就一定不能包含 没有满足条件的 char c。 那么我们就把原string分成几段， 以c出现过的位置来分， 对划分出来的每一段， 重复此过程来进行判断。
@@ -12,7 +12,7 @@
 
 时间复杂度为 O(26n)， 因为最多只可能 recursion 26层， 每层最多耗时n。
 
-##代码
+## 代码
 ```
 public class Solution {
     public int longestSubstring(String s, int k) {
@@ -49,3 +49,4 @@ public class Solution {
     }
 }
 ```
+

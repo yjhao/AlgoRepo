@@ -1,8 +1,8 @@
-#166- Fraction to Recurring Decimal
+# 166- Fraction to Recurring Decimal
 ## 题意
 将两个整数相除的结果 转换为 string， 用括号表示循环。
 比如： 1/3 = 0.(3)
-##解题
+## 解题
 注意 corner case：
 
 1. 一个正数， 一个负数
@@ -17,7 +17,7 @@
 
 从I之后， 到现在的这一段结果， 都会再次循环。 所以加上括号即可。
 
-##代码
+## 代码
 ```
 public class Solution {
     public String fractionToDecimal(int numerator, int denominator) {
@@ -62,3 +62,4 @@ public class Solution {
     }
 }
 ```
+

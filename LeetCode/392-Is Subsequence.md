@@ -1,15 +1,15 @@
-#392-Is Subsequence
+# 392-Is Subsequence
 ## 题意
 两个String, s and t， check if s is substring of t, s 中的字符 的相对顺序 要与t中一致。
 
-##解题， 方法一
+## 解题， 方法一
 用two pointers of s and t， 分别往前进， 如果 t[i] == s[j]， 那么就步进j， 否则只步进i。
 
 这样的方法， 可以保证相对顺序能够保持， 对于 t中的 a b 字符来说， 如果没有遇到a， 那么永远也不会到 进行判断b有没有的这一步。
 
 时间复杂度为 O(s.length+t.length)。
 
-##代码
+## 代码
 ```
 public boolean isSubsequence(String s, String t) {
         if (s.length()==0)  return true;
@@ -24,7 +24,7 @@ public boolean isSubsequence(String s, String t) {
     }
 ```
 
-##解题， 方法二。
+## 解题， 方法二。
 可以使用induction的方法， 对于 a b 来说。 当判断b的时候， 我们需要知道a在原来的string中的最早可能出现的位置， 然后可以判断， 在a的位置之后， 最早的b的位置。 如果在a之后， 没有b了， 那么肯定就找不到这样的substring。
 
 对每一个字符， 都找的是“最早的位置”， 所以可以保证充要性： 如果没找到， 那么就一定不会有了。
@@ -35,7 +35,7 @@ m = s.length, n = t.length;
 
 时间复杂度为 O(mlogn);
 
-##代码
+## 代码
 ```
 public class Solution {
     public boolean isSubsequence(String s, String t) {
@@ -75,3 +75,4 @@ public class Solution {
     }
 }
 ```
+

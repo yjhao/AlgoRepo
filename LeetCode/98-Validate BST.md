@@ -1,10 +1,10 @@
-#98-Validate BST
+# 98-Validate BST
 
 ## 题意
 验证一个Tree是不是合法的bst
 
 ## 解题
-###第一个方法
+### 第一个方法
 验证某个node的大小在不在左区间和右区间中
 
 **细节： 最大最小值一定用Long表示， 不然如果root.val在Int的边界上， 就会报错**
@@ -56,3 +56,4 @@ public class Solution {
     }
 }
 ```
+

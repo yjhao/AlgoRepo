@@ -1,8 +1,8 @@
-#372-Super Pow （Math and recursion)
-##题意
+# 372-Super Pow （Math and recursion)
+## 题意
 计算 a^b mod 1337, b为一个很大的数， 以一个Array的形式来呈现。 比如说 ``` a = 2, b = [1,0]``` 答案为 1024.
 
-##解题
+## 解题
 ```
 a^(123)%1337 = (a^120%1337) * (a^3%1337)
 
@@ -50,3 +50,5 @@ public class Solution {
     }
 }
 ```
+
+

@@ -1,8 +1,8 @@
-#391-Perfect Rectangle （扫描线 or 几何）
-##题意
+# 391-Perfect Rectangle （扫描线 or 几何）
+## 题意
 给一些小的矩形， 看能不能组成一个大的矩形， 而且没有重叠和空隙。
 
-##解题， 方法一
+## 解题， 方法一
 首先， 所有的小矩形的面积加起来， 应该为大矩形的面积， 大矩形的面积可以由 minx miny maxx maxy 得到。
 
 仔细观察之后， 可以得到一个规律：
@@ -16,7 +16,7 @@
 
 时间复杂度 O(n).
 
-##代码
+## 代码
 ```
 public class Solution {
     public boolean isRectangleCover(int[][] rectangles) {
@@ -71,7 +71,7 @@ public class Solution {
 }
 ```
 
-##解题， 方法二， 扫描线算法， treeset去重
+## 解题， 方法二， 扫描线算法， treeset去重
 如何使用 扫描线： 
 
 对每一个小矩形， 从左至右 加入和删除 y 线段。 在小矩形的最左端加入y线段， 在小矩形的最右端相应的删除这个y线段。
@@ -80,12 +80,12 @@ public class Solution {
 
 我们可以对 x 排序，以满足 从左至右。 但是在同一个x， 有可能是一个矩形的最左端， 也有可能是一个矩形的最右端， 所以为了满足先删除， 在这个情况下， 我们得把 矩形的 最右端放在前面， 把矩形的最左端放在后面。
 
-###扫描线###
+### 扫描线
 如果用这样的方法， 那么在每一个 X 的位置， 加入删除y线段之后， 总的y线段的长度一定为 maxy - miny。否则说明一定有**空隙**。有一个例外， 当处理完所有的矩形之后， ysum一定为0， 所以要排除出这样的情况。
 
 那么如何确保没有**Overlap**呢？ 使用treeset comparator 来比较， 如果没有overlap， 那么一定是 y1[0]>y2[1] or y1[1]>y2[0]， 如果这两个不等式不成立的话， 那么就说明有Overlap， 那么在comparator中既可以返回0， 说明遇到相等的了。 而如果是相等的， 那么 set.add() 就会返回 false。
 
-##代码
+## 代码
 ```
 public class Solution {
     public boolean isRectangleCover(int[][] rectangles) {
@@ -141,3 +141,4 @@ class item implements Comparable<item> {
     }
 }
 ```
+

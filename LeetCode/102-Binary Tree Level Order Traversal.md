@@ -1,4 +1,4 @@
-#102-Binary Tree Level Order Traversal
+# 102-Binary Tree Level Order Traversal
 
 ## 题意
 将每一个level的node.val加入一个list，然后再将这个每一个level的list加入一个list之中。
@@ -11,7 +11,7 @@ BFS
 
 反之， 如果在每一层先建立一个list, 然后加入Node的话， 最后这个list有可能**为空！**
 
-###比如说下面这个代码就是**不正确**的, 最后会加入空的list
+### 比如说下面这个代码就是**不正确**的, 最后会加入空的list
 
 ```
 while (!queue.isEmpty()){
@@ -36,7 +36,7 @@ while (!queue.isEmpty()){
         }
 ```
 
-###以下是正确的代码
+### 以下是正确的代码
 ```
 public List<List<Integer>> levelOrder(TreeNode root) {
         List<List<Integer>> res = new ArrayList<List<Integer>>();
@@ -72,3 +72,4 @@ public List<List<Integer>> levelOrder(TreeNode root) {
         
     }
 ```
+

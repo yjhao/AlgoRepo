@@ -1,4 +1,4 @@
-#275 H-Index II
+# 275 H-Index II
 ## 题意
 类似于274， 根据一个数列， 得出H-Index. 有H个数字**至少大于等于H**，但此时这个数列已经排好序了。
 
@@ -36,3 +36,5 @@ public int hIndex(int[] citations) {
         return citations.length-left;
     }
 ```
+
+

@@ -1,4 +1,4 @@
-#281- Zigzag Iterator
+# 281- Zigzag Iterator
 
 ## 题意
 构造一个 iterator， 能够轮流输出 一组 list 中的数字。
@@ -15,7 +15,7 @@
 ## 细节
 Iterator.next ()  返回的数据 一定要用 （int) 来强制转型。 因为 next() **返回的是一个 Object**！
 
-##代码
+## 代码
 ```
 public class ZigzagIterator {
     LinkedList<Iterator> queue = new LinkedList<Iterator>();
@@ -44,3 +44,4 @@ public class ZigzagIterator {
  * while (i.hasNext()) v[f()] = i.next();
  */
  ```
+

@@ -1,9 +1,9 @@
-#269-Alien Dictionary(Topological Sort)
+# 269-Alien Dictionary(Topological Sort)
 
-##题意
+## 题意
 给一些单词， 按照他们的顺序， 列出字典序。
 
-##解题， 和细节
+## 解题， 和细节
 典型的拓扑排序。
 
 但是与 course number 的区别主要是：
@@ -11,7 +11,7 @@
 1. 不是a-z的所有字母都在这个字典中， 所以要遍历所有的单词， 确定哪些字母存在， 用boolean array 来存储。
 2. 如果一个字母的 outDegree = 0， 还有可能是 它根本就不存在于这个字典中， 所以一定要确定他是在这个字典中的， 用第一步建立的 Boolean array。
 
-##代码
+## 代码
 ```
 public class Solution {
     public String alienOrder(String[] words) {
@@ -75,3 +75,4 @@ public class Solution {
     }
 }
 ```
+

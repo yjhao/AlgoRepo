@@ -1,12 +1,12 @@
-#234-Palindrome Linked List
+# 234-Palindrome Linked List
 ## 题意
 检测一个List是不是palindrome
-##解题
+## 解题
 首先找到中点， 然后翻转第二个half, 然后再比较
-##细节
+## 细节
 翻转的时候， 有一个最开始的“head1”， 他会一直接在下一个NexT上面， 还有一个是每次都更新的“head2”， 插在上一个“head2"的前面
 
-##代码
+## 代码
 ```
 public class Solution {
     public boolean isPalindrome(ListNode head) {
@@ -45,3 +45,4 @@ public class Solution {
     }
 }
 ```
+

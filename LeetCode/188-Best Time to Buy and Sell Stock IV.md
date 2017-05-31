@@ -1,9 +1,9 @@
-#188-Best Time to Buy and Sell Stock IV
+# 188-Best Time to Buy and Sell Stock IV
 
-##题意
+## 题意
 最多可以交易交易K次， 求最大收益， 一次交易包括一个买和一个卖
 
-##解题
+## 解题
 采用DP, 定义两个数组
 
 hold[i][j]: 最多 i 次交易， 在第 j 天的最大的利润， 此时手里还有股票
@@ -26,7 +26,7 @@ unhold[i][j] = Math.max(    hold[i][j-1] + price[j], unhold[i][j-1])
 
 交易次数放在外循环， 可以修改边界条件。
 
-##代码
+## 代码
 ```
 public class Solution {
     //https://leetcode.com/discuss/57669/understanding-easily-modified-different-situations-solution
@@ -58,3 +58,5 @@ public class Solution {
     }
 }
 ```
+
+

@@ -1,15 +1,15 @@
-#310-Minimum Height Trees (三个方法）
+# 310-Minimum Height Trees (三个方法）
 ## 题意
 给一个 undirected graph， 找出一个node， 当这个node为root的时候， 这个tree的高度最小。
 
-##解题, 方法一， 层层删去leaf node
+## 解题, 方法一， 层层删去leaf node
 有点类似于 toplogical sort
 
 从 leaf 开始一个一个删除， （可以看成是抛去最外面的一层）。 当只剩下 <=2 node 的时候， 即为最后的答案。
 
 leaf ： edge number = 1
 
-##细节
+## 细节
 因为 是 undirected graph， 所有不能像 course number 这样， 只记录 in edge 或者 out edge，然后只更新 in edge or out edge number。 这里 [a,b]， 对于 a, b， 都需要保存其邻居节点信息。 
 
 而且 对于 更新某一node来说， 当 edge number 只剩下一个的时候， 不能确定到底是哪一个。 （但是如果是 course number， 因为删除的是 in 或者 out 那一面， 所以剩下的是 out 或者 in 那一面， 所以可以很快的找到是哪个邻居节点）
@@ -18,7 +18,7 @@ leaf ： edge number = 1
 
 因为要实现删除， 所以为了快速操作， 使用Set来存储 邻居节点的信息。
 
-##代码
+## 代码
 ```
 public class Solution {
     public List<Integer> findMinHeightTrees(int n, int[][] edges) {
@@ -59,7 +59,7 @@ public class Solution {
 }
 ```
 
-##方法二， 找到 tree 的直径， root一定在这个直径的path的中点。
+## 方法二， 找到 tree 的直径， root一定在这个直径的path的中点。
 
 使用2个 DFS, 或者 2个 BFS 找到这个树的直径以及path。
 
@@ -73,7 +73,7 @@ DFS 优点：
 
  1. 快
 
-##BFS代码
+## BFS代码
 ```
 public class _310 {
     int n;
@@ -136,7 +136,7 @@ public class _310 {
 }
 ```
 
-##DFS代码
+## DFS代码
 ```public class Solution {
     public List<Integer> findMinHeightTrees(int n, int[][] edges) {
         List<Integer> res = new ArrayList<Integer>();

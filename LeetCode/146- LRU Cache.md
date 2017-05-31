@@ -1,9 +1,9 @@
-#146- LRU Cache
+# 146- LRU Cache
 
-##题意
+## 题意
 设计一个LRU cache， 实现get, set
 
-##解题
+## 解题
 使用hashmap 和 doubleLinkedList。
 
 使用hashmap， 可以很快的从key找到这个node， 然后更新这个node的位置。
@@ -132,3 +132,4 @@ class doubleLinkedList {
     }
 }
 ```
+

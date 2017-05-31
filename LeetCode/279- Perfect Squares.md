@@ -1,11 +1,11 @@
-#279- Perfect Squares
+# 279- Perfect Squares
 
-##题意
+## 题意
 Given a positive integer n, find the least number of perfect square numbers (for example, 1, 4, 9, 16, ...) which sum to n.
 
 For example, given n = 12, return 3 because 12 = 4 + 4 + 4; given n = 13, return 2 because 13 = 4 + 9.
 
-##解题
+## 解题
 方法一：
 
 在 i 的基础上， 每次加上一个**相同**的 完全平方数。并递增i
@@ -35,7 +35,7 @@ for (int i=0; i<n; i++){
 ```
 每次都在 i 的基础上 加一。
 
-##代码
+## 代码
 ```
 public class Solution {
     public int numSquares(int n) {
@@ -68,3 +68,4 @@ public class Solution {
     }
 }
 ```
+

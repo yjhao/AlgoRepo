@@ -1,9 +1,9 @@
-#50-Pow(x, n) (二分法， 注意integer min and max boundary相差一）
+# 50-Pow(x, n) (二分法， 注意integer min and max boundary相差一）
 
-##解题
+## 解题
 注意integer min and max boundary相差1
 
-##代码
+## 代码
 ```
 public class Solution {
     public double myPow(double x, int n) {
@@ -33,3 +33,4 @@ public class Solution {
     }
 }
 ```
+

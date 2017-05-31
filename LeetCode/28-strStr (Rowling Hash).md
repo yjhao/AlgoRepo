@@ -1,8 +1,8 @@
-#28-strStr (Rowling Hash)
-##题意
+# 28-strStr (Rowling Hash)
+## 题意
 实现 strStr
 
-##解题
+## 解题
 使用rowling hash 来判断， 复杂度为 O(n)。
 
 得注意的几个细节：
@@ -16,7 +16,7 @@ hash 更新的时候， 理论上说， 可以用乘法， 也可以用除法，
 ---
 其次， 在更新 hash 的时候， 要减去要删去的一个字符的val。 此时不能直接 hash = hash-val， 而是需要 使用 hash = hash+mod-val。 因为在每一步都是取了余的， 所以会导致 hash 有可能是小于 val的
 
-##代码
+## 代码
 ```
 public class Solution {
     long MOD = 1000000007;
@@ -56,3 +56,5 @@ public class Solution {
     }
 }
 ```
+
+

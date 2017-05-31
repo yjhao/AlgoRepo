@@ -1,4 +1,4 @@
-#34-Search for a Range (二分）
+# 34-Search for a Range (二分）
 
 ## 题意
 给一个数， 求它在一个排好序的数列中的起始位置， 如果没有找到的话， 返回-1。
@@ -27,7 +27,7 @@ while loop 设计成 l<=r， 所以当完成搜索之后，必定会交错。 �
 
 如果这个值没有找到， 两个二分搜索的结果应该会一样
 
-##代码
+## 代码
 ```
 public class Solution {
     public int[] searchRange(int[] nums, int target) {
@@ -62,3 +62,4 @@ public class Solution {
     }
 }
 ```   
+

@@ -1,4 +1,4 @@
-#297-Serialize and Deserialize Binary Tree
+# 297-Serialize and Deserialize Binary Tree
 ## 题意
 给一个Tree, 将它变为一个String, 再把这个string还原为一个Tree.
 
@@ -18,7 +18,7 @@ serialize的关键就是前后要一致。
 
 比较String的时候， 不能使用“==”
 
-##代码
+## 代码
 ```
 /**
  * Definition for a binary tree node.
@@ -81,3 +81,4 @@ public class Codec {
 // Codec codec = new Codec();
 // codec.deserialize(codec.serialize(root));
 ```
+

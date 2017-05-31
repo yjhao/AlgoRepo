@@ -1,9 +1,9 @@
-#140- Word Break II
+# 140- Word Break II
 
 ## 题意
 根据字典里面的单词， 给出所有可能的 word break 组合
 
-##解答
+## 解答
 首先， 因为是给出 所有 的 组合， 所以肯定是DFS搜索。
 
 但是， 因为 根据 “相同的 string, 最后的答案是唯一的”, 所以可以采用“截枝” 的手法， 用一个hashmap来存一下 当前的 string 有没有出现， 和如果出现了， 答案是多少。
@@ -12,7 +12,7 @@
 
 采用截枝的话 ， DFS 是 自底向上 的 return 和“得到答案”。
 
-##注意细节
+## 注意细节
 
 1. 对于一个String的最末尾之后， 返回的答案应该是 ”“， 而不是什么都没有。 ”什么都没有“发生在 一个 substring 完全一个答案都没有的时候。
 
@@ -22,7 +22,7 @@
 
 2. 在合并string 的时候， 如果 第二个部分是 空string （“”)， 两个合并的部分中间是不应该放 空格 的。不然就会出现 "a hand " ， 而正确答案应该是 “a hand"。
 
-##代码
+## 代码
 ```
 public class Solution {
     public List<String> wordBreak(String s, Set<String> wordDict) {

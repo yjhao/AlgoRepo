@@ -1,9 +1,9 @@
-#305-Number of Islands II (Union Find)
+# 305-Number of Islands II (Union Find)
 
 ## 题意
 一个一个加入小岛， 小岛就与邻近的小岛连成大岛。 问岛的数量。
 
-##解题
+## 解题
 很典型的 union find 问题
 
 处理 union find：
@@ -12,7 +12,7 @@
 2. weighted merging, 将子孙少的那一个 node 的 parent 设成 子孙多的 node, 并更新 子孙多的那个node的子孙数量
 
 
-##细节
+## 细节
 最开始初始化的时候， 如果用一维数列表示 parents， 默认的数量是 "0"， 但是由于 0 的真正 parent 也是0， 而其他的node的真正parent都不是0， 所以更新的过程中就会出问题。
 
 解决方法， 倾向于第一个。
@@ -20,7 +20,7 @@
 1. 只对 地图中 值为 1 的 cell 进行 merge。
 2. 或者 将每一个 cell  的 idx 都加上一， 这样就没有 cell 的 index 为 0 了。
 
-##代码
+## 代码
 ```
 public class Solution {
     int[] dx = {0,0,-1,1};
@@ -99,3 +99,4 @@ class Union{
     }
 }
 ```
+

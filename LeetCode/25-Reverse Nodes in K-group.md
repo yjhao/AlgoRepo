@@ -1,8 +1,8 @@
-#25-Reverse Nodes in K-group
-##题意
+# 25-Reverse Nodes in K-group
+## 题意
 在一个list当中，翻转每K个node， 如果不够K个， 则不翻转
 
-##解题
+## 解题
 因为题目要求“不够K个， 则不翻转”， 所以我们先用一个指针往前探索每k个node， 看有没有这么多， 如果没有这么多， 说明我们已经到了List的末端， 可以直接退出了。
 
 **然后我们对k个Node进行k-1次的插入**：
@@ -15,7 +15,7 @@ pre-1-2-3-(4) : pre-2-1-3-(4) : pre-3-2-1-(4)
 1. while（true）loop 直到break。 
 2. 在第二个while loop中， 一定要将break的语句放到while之外， 不然只是break内层的while。
 
-##我写的代码 注意break的时候， count和Cur可能同时为K和null， 所以都要检查
+## 我写的代码 注意break的时候， count和Cur可能同时为K和null， 所以都要检查
 
 ```
 /**
@@ -66,7 +66,7 @@ public class Solution {
 }
 ```
 
-##代码
+## 代码
 ```
 /**
  * Definition for singly-linked list.
@@ -115,3 +115,4 @@ public class Solution {
     }
 }
 ```
+

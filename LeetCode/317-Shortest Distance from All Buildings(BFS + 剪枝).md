@@ -1,9 +1,9 @@
-#317-Shortest Distance from All Buildings(BFS + 剪枝)
+# 317-Shortest Distance from All Buildings(BFS + 剪枝)
 
-##题意
+## 题意
 给一个2D grid， 在一些可以选择的地方， 选一个地方， 使他到**所有** 有标记物的的地方 的距离最短。 限制： 有障碍物。
 
-##解题
+## 解题
 因为是最短， 所以使用 BFS
 
 将每一个标记物的位置放入 queue，然后分别进行 BFS
@@ -16,7 +16,7 @@
 
 这一个剪枝， 大大的加快了速度。
 
-##代码
+## 代码
 ```
 public class Solution {
     int[][] move = {{1,0},{-1,0},{0,1},{0,-1}};
@@ -94,3 +94,4 @@ public class Solution {
     
 }
 ``` 
+

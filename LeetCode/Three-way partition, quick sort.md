@@ -1,4 +1,4 @@
-#Three-way partition, quick sort
+# Three-way partition, quick sort
 
 ## Three way sorting
 Three way sort is originally used to sort 0,1,2 in space. It tracks the start of 1 as i, and the end of 2 as k.

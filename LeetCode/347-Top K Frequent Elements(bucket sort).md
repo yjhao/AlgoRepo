@@ -1,8 +1,8 @@
-#347-Top K Frequent Elements(bucket sort)
-##题意
+# 347-Top K Frequent Elements(bucket sort)
+## 题意
 给一串数列， 找出频率最高的K个数， 时间复杂度一定要小于 nlogn
 
-##解题
+## 解题
 因为必须要小于 nlogn， 而且还必须对频率排序， 那么非常自然的就想到用 bucket sort。
 
 那么bucket sort的上下边界是什么呢？
@@ -13,7 +13,7 @@ bucket sort 对频率进行排序， 下界是1， 上界是 nums.length （整�
 
 首先用Hashmap记录每个数字的频率。
 
-##代码
+## 代码
 ```
 public class Solution {
     public List<Integer> topKFrequent(int[] nums, int k) {
@@ -47,3 +47,4 @@ public class Solution {
     }
 }
 ```
+

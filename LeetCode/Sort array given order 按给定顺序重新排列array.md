@@ -1,6 +1,6 @@
-#Sort array given order 按给定顺序重新排列array
+# Sort array given order 按给定顺序重新排列array
 
-##题意
+## 题意
 给定两个array，一个是actual numbers, 另一个是position array, 按照position array将actual number array排序。
 
 例子：
@@ -12,15 +12,15 @@ position array : [3 1 0 4 2]
 
 actual number array变成 [1 2 3 4 5]
 
-##解题
+## 解题
 floyed cycle : 当 I == order[i] 的时候， 说明回到了cycle 起点。 
 
 所以一直swap val and idx， 直到 i==order[i]为止。
 
-###follow up
+### follow up
 还可以计算 每个 cycle  的大小。 不需要 visited 来存储， 如果第一次遇到就是  I == order[i]， 那么说明 要么 不在 cycle 中， 要么已经计算在 cycle 中了。
 
-##代码
+## 代码
 ```
 public void sortOrder(int[] array, int[] order){
         if(array == null || order == null){
@@ -48,3 +48,4 @@ public void sortOrder(int[] array, int[] order){
         num[j] = temp;
     }
 ```
+

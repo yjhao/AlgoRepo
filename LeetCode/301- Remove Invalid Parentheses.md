@@ -1,21 +1,21 @@
-#301- Remove Invalid Parentheses
-##题意
+# 301- Remove Invalid Parentheses
+## 题意
 在一个字符串里面， 用最小的删除数目， 使字符串的括号合法， 并输出所有合法字符串。
 
-##解题 BFS
+## 解题 BFS
 首先想想有没有Greedy算法， 好像没有， 因为要一个一个尝试，还要输出合法的子串。
 
 因为是最小的删除， 所以想到bfs。
 
 当合法之后， 检查当前的所在层数， 跳过所有的在下面一层的子串。
 
-##这个方法的不足
+## 这个方法的不足
 这个方法速度很慢， 因为它穷尽所有可能的组合， 而不论是否是最短解。比如说首先先减一再加一，虽然看似好像归零了，但是用了两次操作， 不是最优解。
 
 解决办法是使用DFS, 如下文描述
 https://leetcode.com/discuss/72208/easiest-9ms-java-solution
 
-##代码
+## 代码
 ```
 public List<String> removeInvalidParentheses(String s) {
     Set<String> res = new HashSet<>();

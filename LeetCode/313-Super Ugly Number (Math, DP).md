@@ -1,8 +1,8 @@
-#313-Super Ugly Number (Math, DP)
-##题意
+# 313-Super Ugly Number (Math, DP)
+## 题意
 给出一个质数的list, 写出 第n个 ugly number。 ugly number 是所有质因数都来自于这个 list。
 
-##解题
+## 解题
 采用 induction 来解题。**一个Ugly number， 肯定是由另外一个 ugly number 乘上一个list 中的质数来形成的。**
 
 假设我现在有一个 ugly number 了， 那么通过这个 ugly number， 分别乘以 list 中的其他质数， 那么我们可以得到 新的 ugly number， 然后再在 这些 ugly number 中选择小的一个。
@@ -15,7 +15,7 @@
 
 该怎么递增呢？ 比如 m*n， n 是质数， m 是前面的一个因子， 也是取得的一个ugly number。 那么我们就 递增 m 的大小，把m赋值为它的下一个 Ugly number。
 
-##代码
+## 代码
 ```
 public class Solution {
     public int nthSuperUglyNumber(int n, int[] primes) {
@@ -40,3 +40,4 @@ public class Solution {
     }
 }
 ``` 
+

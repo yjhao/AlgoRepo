@@ -1,6 +1,6 @@
-#Longest Common Subsequence and Longest Common Substring
+# Longest Common Subsequence and Longest Common Substring
 
-##题意
+## 题意
 给出两个字符串，找到最长公共子序列(LCS)，返回LCS的长度。
 
 给出两个字符串，找到最长公共子串，并返回其长度。
@@ -34,7 +34,7 @@ dp[i][j] = Math.max(dp[i-1][j], dp[i][j-1])
 dp[i][j] = dp[i-1][j-1]+1
 ```
 
-##LCS 代码
+## LCS 代码
 ```
 public int longestCommonSubsequence(String A, String B) {
         // write your code here

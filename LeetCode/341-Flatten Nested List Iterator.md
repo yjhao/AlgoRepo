@@ -1,11 +1,11 @@
-#341-Flatten Nested List Iterator
+# 341-Flatten Nested List Iterator
 
-##题意
+## 题意
 Given the list [[1,1],2,[1,1]],
 
 By calling next repeatedly until hasNext returns false, the order of elements returned by next should be: [1,1,2,1,1].
 
-##解题
+## 解题
 有两种方法， 第一种是 将 list 用 Stack 展开， 然后一个一个取出来。 这个方法的问题是 需要的空间是 O(n), 因为最坏情况是， 每一个元素都需要存一下。
 
 更好一点的方法是， 节省空间， 用 iterator.next() 来取得下一个元素。因为有层层嵌套的情况， 所以 iterator 不止一个， 那么怎么存储之前的iterator情况呢? 将 iterator 放入  stack 之中。
@@ -18,7 +18,7 @@ By calling next repeatedly until hasNext returns false, the order of elements re
 
 peek stack 顶端的时候， 有可能当前的list的iterator已经没有next了， 所以这种情况下， 需要Pop出。
 
-##代码
+## 代码
 ```
 /**
  * // This is the interface that allows for creating nested lists.
@@ -69,3 +69,4 @@ public class NestedIterator implements Iterator<Integer> {
  * while (i.hasNext()) v[f()] = i.next();
  */
 ```
+

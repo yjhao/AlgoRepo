@@ -1,8 +1,8 @@
-#307-Range Sum Query - Mutable
+# 307-Range Sum Query - Mutable
 ## 题意
 给一个array的range， 求出在这个range中的数字的和
 
-##解题， 线段树。
+## 解题， 线段树。
 线段树的步骤：
 
 1. 我们需要将Array放在tree的最底层， 所以首先确定最底层一共有多少个Node， 使用2的完全平方。然后将tree的之前的level也算上， 就是一个tree array了。
@@ -13,7 +13,7 @@
 注意的细节：
 * 在更新的时候， 不能使用 while (idx>0)， 因为 idx有可能就是 0， 所以要先更新， 再判断是不是0
 
-##代码
+## 代码
 ```
 public class NumArray {
     int[] tree;
@@ -57,3 +57,4 @@ public class NumArray {
     }
 }
 ```
+

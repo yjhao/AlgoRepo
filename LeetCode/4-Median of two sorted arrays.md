@@ -1,4 +1,4 @@
-#4-Median of two sorted arrays.
+# 4-Median of two sorted arrays.
 
 # 题意
 找出两个排好序的数列中的中值。
@@ -17,7 +17,7 @@
 
 还需要注意的是， 因为是截断出一个Subsequence, 然后递归到下一层。换句话说， 长度总是减小的。 如果下一层的subsequence长度不能减小， 所以就需要人工介入来判断答案。 什么时候长度不会再减小了呢？ k/2=0的时候， 所以K=1的时候需要人工介入。
 
-##代码
+## 代码
 ```
 public class Solution {
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
@@ -65,3 +65,4 @@ public class Solution {
     }
 }
 ```
+

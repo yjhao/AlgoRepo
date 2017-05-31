@@ -1,11 +1,11 @@
-#532-K-diff Pairs in an Array
-##题意
+# 532-K-diff Pairs in an Array
+## 题意
 给一个Array, 在这个数列中， 找出绝对值相差为K的pair， 要求这个pair必须是Unique的。
 
-##解题一
+## 解题一
 首先可以想到用hashmap来做。 需要注意的是， 如果k=0的时候， 那么pair中的数的大小要相同， 但是Index不能一样， 也就是说， 相同的数的个数一定要大于一。如果K不等于0， 那么只要存在num+k， 就可以了。
 
-##代码
+## 代码
 ```
 public class Solution {
     public int findPairs(int[] nums, int k) {
@@ -30,7 +30,7 @@ public class Solution {
 }
 ```
 
-#解题二
+## 解题二
 这个题目也可以用two pointers来做， 首先将数列排序， 那么数字就有单调性的， ```nums[l1] < nums[l2]```, 那么 如果存在一个数字分别为 ```nums[r1]-nums[l1] = nums[r2]-nums[l2] = k```, 一定可以得到的是， ```nums[r2] > nums[r1]```. 所以可以使用Two pointers， 因为不用再走回头路了。
 
 我们可以针对每个不重复的l， 来找到 r。

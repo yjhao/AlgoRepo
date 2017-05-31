@@ -1,8 +1,8 @@
-#251-Flatten 2D Vector (Iterator)
-##题意
+# 251-Flatten 2D Vector (Iterator)
+## 题意
 对于一个 2D 的 list，实现一个 iterator。
 
-##解题
+## 解题
 每一个 sublist  都有自己的 iterator
 
 对于原list<list<>>, 可以使用一个 iterator 来得到 下一个 sublist。
@@ -20,7 +20,7 @@ totalIterator = vec2d.iterator();
 
 **所以在检查 iterator.hasNext()之前， 应该也检查一下 iterator 是不是为 Null。**
 
-##代码
+## 代码
 ```
 public class Vector2D implements Iterator<Integer> {
     Iterator<List<Integer>> totalIterator;
@@ -54,3 +54,4 @@ public class Vector2D implements Iterator<Integer> {
  * while (i.hasNext()) v[f()] = i.next();
  */
 ```
+

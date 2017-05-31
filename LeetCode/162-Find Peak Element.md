@@ -1,4 +1,4 @@
-#162-Find Peak Element
+# 162-Find Peak Element
 
 ## 题意
 在一个数组中， 找到一个相对于邻居的peak， -1 和 N+1 index 都为负无穷
@@ -12,7 +12,7 @@ otherwise, val[m] < val[m+1], one peak must be found on the right hand of m, so 
 
 **如果更新 l=m， 一定要小心， 因为有可能死循环！** 
 
-##代码
+## 代码
 ```
 public class Solution {
     public int findPeakElement(int[] nums) {

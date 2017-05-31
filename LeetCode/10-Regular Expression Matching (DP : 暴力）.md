@@ -1,9 +1,9 @@
-#10-Regular Expression Matching (DP / 暴力）
+# 10-Regular Expression Matching (DP / 暴力）
 
 ## 题意
 正则匹配。 . 可以匹配任意的字符， * 匹配0个或多个前一个字符。
 
-##解题, 暴力解法
+## 解题, 暴力解法
 首先我们看看 brutal force 的解题方法。假设 输入的 字符 是 s 和 p， s 是需要匹配的字符串。
 
 如果在p的 j 位置， 遇到一个正常的字符， 而 J+1 不是 “*”， 那么我们只需要 看 p 和 s 的当前位置是否一样 （或者 P[j] 是否为 .）， 如果不一样的话， 返回false。
@@ -52,7 +52,7 @@ private boolean helper(String s, String p, int i, int j){
    }
 ```
 
-##解题 DP
+## 解题 DP
 我们用 dp[i][j] 来 代表 s 和 p 的前 I 个 和 前 j 个字符是否Match。
 
 相似的， 分几种情况。
@@ -66,7 +66,7 @@ private boolean helper(String s, String p, int i, int j){
 	
 	以上两个情况， 只要有一个情况为真， dp[i+1][j+1] 都会为真。
 	
-##注意的细节
+## 注意的细节
 
 DP的边界条件需要初始化。 DP[0][j] 需要一个一个进行判断。 所以traverse String 的时候， 不能用 string index， 得用 dp 的 index。 这样的话， 就可以保证 DP[0][j] 会得到判断
 
@@ -74,7 +74,7 @@ DP的边界条件需要初始化。 DP[0][j] 需要一个一个进行判断。 �
 
 如果使用 dp[i+1][j+1] 进行更新的话， 永远不会 得到 dp[0][2] = true；
 
-##代码
+## 代码
 ```
 public class Solution {
     public boolean isMatch(String s, String p) {
@@ -109,3 +109,5 @@ public class Solution {
     }
 }
 ``` 
+
+

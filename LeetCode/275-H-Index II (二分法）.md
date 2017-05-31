@@ -1,4 +1,4 @@
-#275 H-Index II (二分法）
+# 275 H-Index II (二分法）
 
 ## 题意
 求H-Index， 引用已经按大小顺序排好了， 找到H, 有H个数字至少大于等于H, 所以是比较**离端点距离和当前数字的关系**， 采用Binary search
@@ -14,7 +14,7 @@
 
 因为还要对最后一个 Mid 进行判断， 看 Mid 是否合格， 所以必须得使用 While (left<=right), 而不是 While (left<right)
 
-#代码
+## 代码
 ```
 public class Solution {
     public int hIndex(int[] citations) {
@@ -40,3 +40,4 @@ public class Solution {
     }
 }
 ```
+

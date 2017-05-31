@@ -1,4 +1,4 @@
-#341-Flatten Nested List Iterator (数据结构 Stack）
+# 341-Flatten Nested List Iterator (数据结构 Stack）
 
 ## 题意
 Given a nested list of integers, implement an iterator to flatten it.
@@ -25,10 +25,10 @@ By calling next repeatedly until hasNext returns false, the order of elements re
 
 如果 stack 都变成空了， 还没有找到这样的 Integer， 那么就返回 false。
 
-###细节
+### 细节
 如果只有最后一个 Item 了， pop() 这个 item 之后， 这个stack就是空了， 所以这个时候不能使用 while (!stack.isEmpty())。 因为还没有解包这个item之前， 这个 stack 就已经是空的了。
 
-##代码
+## 代码
 ```
 /**
  * // This is the interface that allows for creating nested lists.
@@ -85,3 +85,4 @@ public class NestedIterator implements Iterator<Integer> {
  * while (i.hasNext()) v[f()] = i.next();
  */
 ```
+

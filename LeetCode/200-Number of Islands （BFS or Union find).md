@@ -1,5 +1,5 @@
-#200-Number of Islands （BFS or Union find)
-##解题
+# 200-Number of Islands （BFS or Union find)
+## 解题
 BFS 就不用解释了
 
 以下是union find 的代码
@@ -68,3 +68,4 @@ class UnionFind {
         }
     }
 ``` 
+

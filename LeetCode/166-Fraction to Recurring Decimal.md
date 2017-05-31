@@ -1,4 +1,4 @@
-#166-Fraction to Recurring Decimal
+# 166-Fraction to Recurring Decimal
 
 ## 题意
 用 String 表示两个正数除法的结果， 如果有循环， 用括号表示。
@@ -7,11 +7,11 @@
 ## 解题
 使用 hashmap 来记录之前的余数， 如果当前运算出现了相同的余数， 说明从上次的余数开始， 到现在之前的所有部分， 都会再次循环。
 
-##几个细节
+## 几个细节
 1. 有正数， 负数
 2. 为了防止 overflow， 使用 long 来记录被除数， 除数， 和余数。
 
-##代码
+## 代码
 ```
 public class Solution {
     public String fractionToDecimal(int numerator, int denominator) {
@@ -53,3 +53,4 @@ public class Solution {
     }
 }
 ```
+

@@ -1,4 +1,4 @@
-#309- Best Time to Buy and Sell Stock with Cooldown
+# 309- Best Time to Buy and Sell Stock with Cooldown
 
 ## 题意
 还是买卖股票， 不过这次是卖了之后的 next day 不能交易。
@@ -34,3 +34,4 @@ public int maxProfit(int[] prices) {
         return sell>cooldown?sell:cooldown;
     }
 ```
+

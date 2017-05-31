@@ -1,4 +1,4 @@
-#336 Palindrome Pairs
+# 336 Palindrome Pairs
 ## 题意
 给一个String list: words， 找出i 和 j， 使得 words[i] + words[j] 为回文。
 
@@ -38,7 +38,7 @@ i != j
 
 **简单方法：  将A一份为二， 对两个中的任何一个substring， 看是否是回文， 然后要加入的部分就是另外一个substring的逆序。**
 
-##代码
+## 代码
 ```
 public List<List<Integer>> palindromePairs(String[] words) {
     List<List<Integer>> ret = new ArrayList<>(); 

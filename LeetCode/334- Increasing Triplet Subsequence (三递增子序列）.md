@@ -1,4 +1,4 @@
-#334- Increasing Triplet Subsequence (三递增子序列）
+# 334- Increasing Triplet Subsequence (三递增子序列）
 
 ## 题意
 求有没有一个子序列 ， i<j<k and nums[i]<nums[j<nums[k]
@@ -14,7 +14,7 @@
 
 如果等会出现的数字， 比第二最小值小， 而比第一最小值大， 更新第二最小值。
 
-##代码
+## 代码
 ```
 public class Solution {
     public boolean increasingTriplet(int[] nums) {
@@ -36,3 +36,4 @@ public class Solution {
     }
 }
 ``` 
+

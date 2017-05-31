@@ -1,12 +1,12 @@
-#326-Power of Three
+# 326-Power of Three
 
-##题意
+## 题意
 判断一个数是否为3的方次数， 不能用loop
 
-##解题
+## 解题
 用最大的一个 3的方次数 对 n 取余， 即可判断是否为3的方次数。
 
-##代码
+## 代码
 ```
 public class Solution {
     public boolean isPowerOfThree(int n) {
@@ -15,3 +15,4 @@ public class Solution {
     }
 }
 ```
+

@@ -1,8 +1,8 @@
-#491-Increasing Subsequences
-##题意
+# 491-Increasing Subsequences
+## 题意
 给一个Array， 找出这个里面的所有 Subarray whose length >=2, 这些 Subarray必须是不递减的， 而且必须是Unique的。
 
-##解题， 方法一 （不是特别好）
+## 解题， 方法一 （不是特别好）
 首先这肯定是一个 DFS 问题， 在某一个位置的时候， 处理下一个数，如果这个数字大于等于当前的末尾， 那么我们可以选择加， 也可以选择不加； 如果下一个数不是大于等于当前末尾， 那么就一定不能够加。
 
 当这个subarray长度大于等于2的时候， 我们就可以把它作为答案的候选人之一。
@@ -15,7 +15,7 @@ list = new ArrayList(set)
 
 **这样的方法， dfs需要走遍每一个数字， 而且是一个一个走。**
 
-##代码
+## 代码
 ```
 public class Solution {
     public List<List<Integer>> findSubsequences(int[] nums) {
@@ -62,7 +62,7 @@ public class Solution {
 }
 ```
 
-##解题， 方法二， 更好的方法。
+## 解题， 方法二， 更好的方法。
 在前一个方法中， 在Dfs中，我们一一的遍历数字。 那么我们也可以采取另外一个方法： 我们在剩余的所有数字中， 选择一个合适的数字来加入。
 
 这样的方法的话， 就不会一一的遍历各个数字了。
@@ -75,7 +75,7 @@ public class Solution {
 
 **使用这样的方法， 如果是重复的结果， 我们压根就没有进入过访问过， 而不像前一个方法， “访问过， 但只是没有加入到答案之中”。** 所以本方法速度更快。
 
-##代码
+## 代码
 ```
 public class Solution {
     public List<List<Integer>> findSubsequences(int[] nums) {
@@ -107,3 +107,4 @@ public class Solution {
     }
 }
 ```
+

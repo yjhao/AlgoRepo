@@ -1,8 +1,8 @@
-#468-Validate IP Address
-##题意
+# 468-Validate IP Address
+## 题意
 给一个IP Address, 问是不是 IPV4 或者 IPV6 中的某一个。
 
-##解题
+## 解题
 这个题没有什么难度，但是有几个细节需要注意：
 
 1. 如果一个string要使用 "." 来分割， 不能直接使用 split("."), 因为 Split 支持 regex， 所以我们要告诉 split， 这个Dot， 是一个真正的dot。 所以要使用 split("\\.") 或者 split("[.]").
@@ -10,7 +10,7 @@
 2. 当String split的时候， 如果 xxx.xxxx.xxx. 以dot来分割， 分割出来的还是只有三个element， 但其实最后还有一个dot。所以我们要手工的判断， 最后一个和最前一个字符， 是不是dot。
 
 
-##代码
+## 代码
 ```
 public class Solution {
     public String validIPAddress(String IP) {
@@ -70,3 +70,4 @@ public class Solution {
     }
 }
 ``` 
+

@@ -1,5 +1,5 @@
-#44-WildCard Matching (String DP)
-##题意
+# 44-WildCard Matching (String DP)
+## 题意
 本题很像 正则匹配。 
 
 '?' Matches any single character.
@@ -8,7 +8,7 @@
 
 唯一的区别就是 * 不需要看s和j前面的字符是什么
 
-##解题
+## 解题
 采用DP。 isMatch(String s, String p)
 
 相似于 正则匹配， 需要对边界条件 DP[0][i] 进行判断。
@@ -25,7 +25,7 @@
 
 综上所述。dp[i][j] = dp[i-1][j-1] || dp[i-1][j] || dp[i][j-1];
 
-##代码
+## 代码
 ```
 public class Solution {
     public boolean isMatch(String s, String p) {
@@ -62,3 +62,5 @@ public class Solution {
     }
 }
 ```
+
+

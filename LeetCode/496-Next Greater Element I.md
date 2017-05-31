@@ -1,8 +1,8 @@
-#496-Next Greater Element I
-##题意
+# 496-Next Greater Element I
+## 题意
 在一个数列里面， 找出每一个数字的右面的第一个比其大的数字。在这个数列中， 没有重复的数字。
 
-##解题
+## 解题
 这道题， 如果focus在 对于**每一个数字**， 来找到其**右边**的第一个比其大的数， 复杂度好像会是 n^2。
 
 所以换一个方法， 当我们拿到某一个数之后， 应该找一下**左面的比其小的数**， 那么对于这些比其小的数， 他们右边的第一个比他们大的数字， 就是现在的这个数字。
@@ -13,7 +13,7 @@
 
 所以这个stack 最后应该是一个“递减stack”。
 
-##代码
+## 代码
 ```
 public class Solution {
     public int[] nextGreaterElement(int[] findNums, int[] nums) {

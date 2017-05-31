@@ -1,12 +1,12 @@
-#498-Diagonal Traverse
-##题意
+# 498-Diagonal Traverse
+## 题意
 给一个M*n的矩阵， 然后蛇形z字形的打印里面的数字。
 
-##解题一
+## 解题一
 这个题是对角线打印的升级版本。
 首先我们可以得到一共有多少个对角线， 然后对于每个对角线， 可以根据他的序列号， 判断他是正对角线还是反对角线。 对于每一个对角线， 我们可以找到他的起点 （必然是边界上的一点）， 然后根据正反对角线的规律， 依次打印出来。
 
-##代码
+## 代码
 ```
 public class Solution {
     public int[] findDiagonalOrder(int[][] matrix) {
@@ -51,7 +51,7 @@ public class Solution {
 }
 ```
 
-##解题二
+## 解题二
 这一个方法有点需要技巧， 首先是几个观察：
 
 1. 当对角线回头的时候， dx dy 就会反向
@@ -62,7 +62,7 @@ public class Solution {
 
 通过不断的微调和行进dx, dy， 我们一一遍历这个矩阵， 然后遍历的顺序， 就是打印的顺序。
 
-##代码
+## 代码
 ```
 public class Solution {
     public int[] findDiagonalOrder(int[][] matrix) {
@@ -106,3 +106,5 @@ public class Solution {
     }
 }
 ```
+
+

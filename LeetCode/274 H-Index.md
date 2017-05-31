@@ -1,4 +1,4 @@
-#274 H-Index
+# 274 H-Index
 
 ## 题意
 根据一个数列， 得出H-Index. 有H个数字**至少大于等于H**.
@@ -65,3 +65,4 @@ public int hIndex(int[] citations) {
         return res;
     }
 ```   
+

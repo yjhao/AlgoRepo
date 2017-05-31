@@ -1,4 +1,4 @@
-#29-Divide Two Integers (二分）
+# 29-Divide Two Integers (二分）
 
 ## 题意
 除法
@@ -23,7 +23,7 @@
 **细节**
 注意overflow， 所以使用long
 
-##代码
+## 代码
 ```
 public class Solution {
     public int divide(int dividend, int divisor) {

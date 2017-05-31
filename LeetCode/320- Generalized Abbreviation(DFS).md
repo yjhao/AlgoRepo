@@ -1,11 +1,11 @@
-#320- Generalized Abbreviation(DFS)
+# 320- Generalized Abbreviation(DFS)
 ## 题意
 把一个单词 变成缩写， 返回所有的可能性。
 
 比如 Word 可以变为：
 ["word", "1ord", "w1rd", "wo1d", "wor1", "2rd", "w2d", "wo2", "1o1d", "1or1", "w1r1", "1o2", "2r1", "3d", "w3", "4"]
 
-##解题
+## 解题
 每一个字母， 有两个选择， 要么变成缩写， 要么维持原来的。
 
 用一个count来表示当前的缩写字母个数。
@@ -16,14 +16,14 @@
 
 复杂度 2^n
 
-##小技巧
+## 小技巧
 使用 StringBuilder 来记录 string
 
 返回到上一层的时候， 直接 使用：
 
 sb.setLength(len)
 
-##代码
+## 代码
 ```
 public class Solution {
     public List<String> generateAbbreviations(String word) {
@@ -51,3 +51,5 @@ public class Solution {
     }
 }
 ```
+
+

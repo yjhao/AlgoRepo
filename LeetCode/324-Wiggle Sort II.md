@@ -1,4 +1,4 @@
-#324-Wiggle Sort II
+# 324-Wiggle Sort II
 
 ## 题意
 iven an unsorted array nums, reorder it such that nums[0] < nums[1] > nums[2] < nums[3]...
@@ -25,7 +25,7 @@ s s s s m m m L L L
 
 正好 m 被隔开了。
 
-##代码
+## 代码
 ```
 public class Solution {
     public void wiggleSort(int[] nums) {
@@ -62,3 +62,4 @@ public class Solution {
     }
 }
 ``` 
+
