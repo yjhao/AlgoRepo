@@ -1,9 +1,9 @@
-#Adapter Design Pattern
-##逻辑
+# Adapter Design Pattern
+## 逻辑
 
 adapter 就是提供一个interface 或者 object， 将两个不相关的Interface联系在一起。
 
-##例子
+## 例子
 比如说墙上的插座 socket 提供 120 v， 但是我们想将其转化为几种不同的电压， 我们就需要使用 adapter。
 
 首先是一个 socket, 和 电压
@@ -38,7 +38,7 @@ public class Volt {
 然后是一个 adapter 的 interface， 我们要将电压转化为 120， 12， 3。
 
 
-##实现 adapter
+## 实现 adapter
 在这里， 有两种方法实现这个 adapter。
 
 实质上， 区别在于， 我们使用 inheritance 还是 encapsulation （composition）。

@@ -1,11 +1,11 @@
-#Chain of Responsibility Design Pattern
+# Chain of Responsibility Design Pattern
 
 ## 逻辑
 我们有一个object传进来， 然后我们需要对他做一系列的操作。 Instead of  在一个方法中做这些操作， 我们可以实现很多类， 在每一个类中， 传入“下一个类” 的引用， 然后将这些类 串成一条 chain。
 
 这样的话， 这么多的方法就 Loose couple 在一起了。
 
-##例子
+## 例子
 取钱， 一共只有 50， 20， 10 三种面值， 我们先看有多少个50， 然后再进入 20 的流程， 然后最后是 10， 形成一个 chain。
 
 首先是钱

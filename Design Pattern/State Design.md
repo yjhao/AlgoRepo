@@ -1,5 +1,5 @@
-#State Design
-##逻辑
+# State Design
+## 逻辑
 当一个 object 根据 一个 Internal  state 而改变状态的时候， 我们可以使用 state design。
 
 比如说一个遥控器， 当 On 的时候， 电视会打开， 当 off 的时候， 电视会关闭。 传统的做法是 用 If else 来判断。

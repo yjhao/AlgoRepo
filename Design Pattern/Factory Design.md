@@ -1,5 +1,5 @@
-#Factory Design
-##逻辑
+# Factory Design
+## 逻辑
 如果根据Input的不同， 要返回各种的不同的 subclass，这个时候就最好使用 factory， 因为 factory 提供了 具体的 subclass 的实现， 和 建立 的分离， 和容易进行 debug 等操作。
 
 首先建立一个 大类， 比如说computer，然后实体化各个类型的电脑， 作为subclass。

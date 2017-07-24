@@ -1,6 +1,6 @@
-#Proxy Pattern
+# Proxy Pattern
 
-##逻辑
+## 逻辑
 如果我们想实现一个 可以控制 的功能， 我们就可以使用proxy pattern。比如说 只能让管理员 run command， 
 
 主要的核心就是在于 **封装**。
@@ -11,7 +11,7 @@
 
 实质就是， 我们是需要用 inheritance 还是 encapsulation。 is-a vs has-a。 多数情况下， 我们倾向于 has-a。 因为可以实现更多的控制， 没有这么多的条条框框。
 
-##例子
+## 例子
 首先实现一个 可以 run command 的类
 
 ```

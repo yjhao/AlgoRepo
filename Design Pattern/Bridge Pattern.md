@@ -1,13 +1,13 @@
-#Bridge Pattern
+# Bridge Pattern
 
-##逻辑
+## 逻辑
 如果我们有一个物体， 分别从多个 interface 继承， 我们就可以使用 Bridge pattern， 将他们链接在一起。
 
 这个pattern的核心在于， Decouple 多个 interface 的行为。
 
 在实现中， prefer Composition over inheritance.
 
-##例子
+## 例子
 一个物品， 有一个shape, 有一个颜色。
 
 先来颜色的 interface 和实例。

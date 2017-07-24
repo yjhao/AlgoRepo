@@ -1,5 +1,5 @@
-#Abstract Factory Design
-##逻辑
+# Abstract Factory Design
+## 逻辑
 很相似与 factory design。但是不会再有 if else， 而是根据 Input factory class， 直接返回相应的 subclass。
 
 首先， 还是 computer superclass and one subclass as an instance。

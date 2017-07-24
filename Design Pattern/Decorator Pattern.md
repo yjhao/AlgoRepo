@@ -1,8 +1,8 @@
-#Decorator Pattern
-##逻辑
+# Decorator Pattern
+## 逻辑
 如果有一个蛋糕， 然后有很多种属性， 都可以在 run time 加在这个蛋糕上， 比如说 是 红色的啊， 是方形的， 是高的是矮的， 就可以用这个decorator pattern 来实现， 不然的话， 如果采用constructer来实现的话， 就会很混乱。 而且如果还要加上另外一个属性， 就会重现新建一个 constructer。
 
-##例子，步骤
+## 例子，步骤
 我们用形状来举例子， 有很多种形状， 不过都是从基本的形状引申开来的。
 
 首先要有一个 形状 的 interface， 然后为每一个属性， 实现这个interface。
@@ -101,7 +101,7 @@ public class DecoratorPatternDemo {
 }
 ```
 
-##例子二， 层层添加
+## 例子二， 层层添加
 在这里， 先实现了一个 基本的 car
 
 ```

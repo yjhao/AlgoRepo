@@ -1,10 +1,10 @@
-#Composite Pattern
-##逻辑
+# Composite Pattern
+## 逻辑
 我们有一些东西， 然后要对每个东西做出相同的操作， 我们就可以用composite pattern， 关键的关键就是在于， 在这个集合中的每一个物品， behave as a single object。
 
 可以被用来构造 tree structure。
 
-##例子
+## 例子
 有一些图形， 圆形 或者 方形， 然后要上颜色， 每一个颜色都被上在了所有的Object上， 所以可以使用 composite pattern
 
 首先是图形interface， 和每一个图形

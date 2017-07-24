@@ -1,5 +1,5 @@
-#Visitor Pattern
-##逻辑
+# Visitor Pattern
+## 逻辑
 
 如果我们必须对某一个 group 中的物品依次做出一些operation， 我们就可以使用 visitor pattern
 

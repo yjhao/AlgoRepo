@@ -1,5 +1,5 @@
-#Builder Pattern
-##逻辑
+# Builder Pattern
+## 逻辑
 如果要建立一个class， 但是有很多参数， 如果直接用 constructer 的话， 很容易出问题， 比如说顺序啊， 参数的个数啊等等。
 
 所以我们就使用 builder pattern 来建立这些class。
@@ -8,7 +8,7 @@
 
 因为采用了这样的办法， 所以 class 自己 的 builder 就要设置成 private的， 用其他方法来call它， 而不能直接在外界call。
 
-##例子
+## 例子
 建立一个蛋糕， 有很多参数， 我们使用一个 Inner class 来传入参数。
 
 注意 consructer 中， 参数是 Builder 的一个实例。 然后在 builder 中， call constructer的时候， 把自己传了进去， 然后返回 Cake。

@@ -1,10 +1,10 @@
-#Prototype Design
-##逻辑
+# Prototype Design
+## 逻辑
 按照字面理解， “原形”。 我们先建立一个“原型人物”， 然后如果想做更改的话， 制造一个“原型人物的副本”， 然后在这个副本上进行更改。
 
 所以 原型 中， 必须提供一个 Copy method。不过可以是 deep 的， 也可以是 shallow copy。
 
-##例子
+## 例子
 一个原型： 一个人员名单。
 
 注意： 里面有一个 clone method。

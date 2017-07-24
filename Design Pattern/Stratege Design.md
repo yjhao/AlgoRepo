@@ -1,5 +1,5 @@
-#Stratege Design
-##逻辑
+# Stratege Design
+## 逻辑
 
 SD 是 behavior design 中的一种。 当我们对于某个任务， 有多种不同算法， 然后用户决定使用哪种算法的时候， 我们就可以使用 stratege design
 

@@ -1,5 +1,5 @@
-#Observer Design Pattern
-##逻辑
+# Observer Design Pattern
+## 逻辑
 
 当一个对象的属性发生了变化， 要通知另外一个观察者这一变化的时候， 我们就应该使用 observer pattern。
 
